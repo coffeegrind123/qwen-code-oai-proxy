@@ -9,6 +9,24 @@ Users might face errors or 504 Gateway Timeout issues when using contexts with 1
 
 ## Quick Start
 
+### Option 1: Running with Docker (Recommended)
+
+1. **Prerequisites**: Docker and Docker Compose installed on your system
+2. **Build and start the container**:
+   ```bash
+   docker-compose up -d
+   ```
+3. **Authenticate with Qwen**:
+   ```bash
+   docker-compose exec qwen-proxy npm run auth
+   ```
+   Follow the instructions to authenticate with your Qwen account.
+4. **Use the Proxy**: Point your OpenAI-compatible client to `http://localhost:8080/v1`.
+
+For detailed Docker instructions, see [DOCKER.md](DOCKER.md).
+
+### Option 2: Running Directly
+
 1.  **Prerequisites**: You need to authenticate with Qwen using the official `qwen-code` CLI tool to generate the required credentials file.
     *   Install the `qwen-code` CLI tool from [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code)
     *   Run `qwen-code auth` to authenticate with your Qwen account

@@ -1,0 +1,16 @@
+services:
+  qwen-proxy:
+    build: .
+    ports:
+      - "8081:8080"
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - DEBUG_LOG=false
+      - LOG_FILE_LIMIT=20
+    volumes:
+      - qwen-credentials:/root/.qwen
+    restart: unless-stopped
+
+volumes:
+  qwen-credentials:
