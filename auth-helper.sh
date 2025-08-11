@@ -50,11 +50,7 @@ echo "1. Install the qwen-code CLI tool from: https://github.com/QwenLM/qwen-cod
 echo "2. Run 'qwen-code auth' to authenticate with your Qwen account"
 echo "3. Copy your credentials to the container with:"
 echo ""
-if command -v docker-compose &> /dev/null; then
-    echo "   docker cp ~/.qwen/oauth_creds.json qwen-code-oai-proxy-qwen-proxy-1:/root/.qwen/"
-else
-    echo "   docker cp ~/.qwen/oauth_creds.json qwen-code-oai-proxy-qwen-proxy-1:/root/.qwen/"
-fi
+echo "   docker cp ~/.qwen/oauth_creds.json qwen-code-oai-proxy-qwen-proxy-1:/home/nextjs/.qwen/"
 echo ""
 echo "After completing these steps, your proxy will be ready to use."
 echo ""

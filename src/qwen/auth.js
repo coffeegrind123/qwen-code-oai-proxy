@@ -28,6 +28,7 @@ class QwenAuthManager {
       this.credentials = JSON.parse(credentialsData);
       return this.credentials;
     } catch (error) {
+      console.error(`Error loading credentials from ${this.credentialsPath}: ${error.message}`);
       return null;
     }
   }
