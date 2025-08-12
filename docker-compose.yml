@@ -6,11 +6,10 @@ services:
     environment:
       - PORT=8080
       - HOST=0.0.0.0
-      - DEBUG_LOG=false
-      - LOG_FILE_LIMIT=20
+      # You can set your Qwen credentials here or use a .env file
+      # - QWEN_CLIENT_ID=your_client_id
+      # - QWEN_CLIENT_SECRET=your_client_secret
     volumes:
-      - qwen-credentials:/root/.qwen
-    restart: unless-stopped
-
-volumes:
-  qwen-credentials:
+      - ./logs:/app/logs
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
